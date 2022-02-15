@@ -1,0 +1,257 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css?family=Catamaran:400,700,900|Grand+Hotel");
+/* Global Styles */
+:root {
+  --clr-white: #fff;
+  --ff-primary: "Catamaran", sans-serif;
+  --ff-secondary: "Grand Hotel", cursive;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-primary);
+  background: hsl(0, 0%, 98%);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 0.5rem;
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/* more global css */
+.section-center {
+  padding: 4rem 0;
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+@media screen and (min-width: 990px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+/* header */
+.navbar {
+  width: 100%;
+  padding: 2rem;
+  background: var(--clr-white);
+  box-shadow: var(--box-shadow);
+}
+.navbar h1 {
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+/* country filter */
+.form-control {
+  width: 100%;
+  max-width: 700px;
+  padding: 1.5rem 2rem;
+  border: none;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--radius);
+  font-size: 1.25rem;
+  color: #222;
+}
+.form-control::placeholder {
+  font-size: 1.25rem;
+  color: hsl(0, 1%, 68%);
+}
+.filter-container {
+  margin-top: 2.5rem;
+}
+.filter-btn {
+  padding: 1.5rem 2rem;
+  font-size: 1.25rem;
+  background: var(--clr-white);
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.filter-error {
+  grid-column: 1/5;
+  text-align: center;
+}
+.region-options {
+  list-style: none;
+  margin-top: 0.25rem;
+  padding: 1rem 2rem;
+  background: var(--clr-white);
+  width: 300px;
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: none;
+}
+.show-regions {
+  display: block;
+}
+.region-option {
+  transition: var(--transition);
+  padding: 0.25rem 0;
+}
+.region-option:hover {
+  padding-left: 1rem;
+  transform: scale(1.05);
+  background: #222;
+  border-radius: var(--radius);
+  color: var(--clr-white);
+}
+@media screen and (min-width: 780px) {
+  .country-filters {
+    display: flex;
+    justify-content: space-between;
+  }
+  .filter-container {
+    margin-top: 0;
+  }
+  .form-control {
+    width: 400px;
+  }
+}
+@media screen and (min-width: 850px) {
+  .form-control {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .form-control {
+    width: 600px;
+  }
+}
+/* Countries */
+.countries {
+  padding: 0;
+}
+.country {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  width: 400px;
+  height: 450px;
+  margin: auto;
+  margin-bottom: 4rem;
+  transition: var(--transition);
+}
+.country:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
+.flag {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  object-fit: cover;
+  height: 200px;
+}
+.country-info {
+  padding: 1rem 2rem;
+}
+.country .name {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 1.5rem 0;
+}
+.population,
+.region,
+.capital {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.country .value {
+  font-size: 1rem;
+  font-weight: 300;
+}
+@media screen and (min-width: 780px) {
+  .countries {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+  .country {
+    max-height: 450px;
+    max-width: 325px;
+  }
+}
+@media screen and (min-width: 1110px) {
+  .countries {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1440px) {
+  .countries {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* page loading */
+.page-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsl(0, 0%, 98%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
